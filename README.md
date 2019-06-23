@@ -2,9 +2,11 @@
 
 ## Using Redux in 12 Steps!
 **1. Plan**
+
 Think back to using state in React components. What slices of state will our application have? Write them down.
 
 **2. Define Actions Types**
+
 Key Question: What types of **actions** will alter my slices of state? Define them as types:
 ```js
 export const EXAMPLE_ACTION_1 = 'EXAMPLE_ACTION_1';
@@ -33,6 +35,7 @@ export function exampleReducer1(sliceOfState = 100, action) {
 ```
 
 **4. Combine Reducers**
+
 In our `index.js`:
 ```js
 // Importing our reducers from the file they were exported from
@@ -46,12 +49,14 @@ const combinedReducer = combineReducers({
 ```
 
 **5. Create Redux Store**
+
 In our `index.js`:
 ```js
 const store = createStore(
   combinedReducer, // IS THE RESULT OF USING combineReducers
 );
 ```
+
 Connecting to Redux DevTools:
 ```js
 const store = createStore(
@@ -61,6 +66,7 @@ const store = createStore(
 ```
 
 **6. Use Redux Store in React App**
+
 In our `index.js`:
 ```js
 import { Provider } from 'react-redux';
@@ -91,6 +97,7 @@ export function exampleFunc3() {
 ```
 
 **8. Connect React Components**
+
 In our component file:
 ```js
 import { connect } from 'react-redux';
@@ -102,6 +109,7 @@ export default connect()(Component);
 ```
 
 **9. Map State to Props**
+
 In our component file:
 ```js
 const mapStateToProps = state => {
@@ -120,6 +128,7 @@ export default connect(mapStateToProps)(Component);
 ```
 
 **10. Connect Action Creators to Component**
+
 In our component file:
 ```js
 // Importing our action creators from the file they were exported from
@@ -135,6 +144,7 @@ export default connect(
 ```
 
 **11. Access State Through Props**
+
 In our component file:
 ```jsx
 // Interpolating our state from Redux that we received as a prop
@@ -142,6 +152,7 @@ In our component file:
 ```
 
 **12. Use Action Creators**
+
 In our component file:
 ```jsx
 // Using our action creator on button click!
