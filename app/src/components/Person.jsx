@@ -15,6 +15,8 @@ class Person extends React.Component {
   onFormSubmit = (event) => {
     event.preventDefault();
     const input = event.target['friend'];
+    input.value !== '' && this.props.addFriend(input.value);
+    input.value = '';
   }
 
   render() {
@@ -24,9 +26,9 @@ class Person extends React.Component {
         <h2>Physical Health: { this.props.physicalHealth }</h2>
         <h2>Friends:</h2>
         {
-          // this.props.friends.map((friend, index) => (
-          //   <h4 key={index}>{friend}</h4>
-          // ))
+          this.props.friends.map((friend, index) => (
+            <h4 key={index}>{friend}</h4>
+          ))
         }
         <div>
           <button onClick={this.props.slipOnBanana}>SLIP ON BANANA PEEL</button>
