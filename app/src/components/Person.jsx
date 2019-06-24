@@ -11,6 +11,10 @@ class Person extends React.Component {
   //   physicalHealth: 150,
   // }
 
+  onFormSubmit = (event) => {
+    event.preventDefault();
+  }
+
   render() {
     return (
       <div>
@@ -21,6 +25,10 @@ class Person extends React.Component {
           <button onClick={this.props.watchNews}>WATCH THE NEWS</button>
           <button onClick={this.props.winLottery}>WIN THE LOTTERY</button>
         </div>
+        <form onSubmit={this.onFormSubmit}>
+          <input name="friend" />
+          <button type="submit">ADD FRIEND</button>
+        </form>
       </div>
     );
   }
