@@ -7,11 +7,12 @@ import './index.css';
 
 // Step-5: Smash our reducers into one reducer!
 // Import our reducers
-import { mentalHealthReducer, physicalHealthReducer } from './reducers/reducers';
+import { mentalHealthReducer, physicalHealthReducer, friendReducer } from './reducers/reducers';
 // Smash them!
 const combinedReducer = combineReducers({
   mentalHealth: mentalHealthReducer,
-  physicalHealth: physicalHealthReducer
+  physicalHealth: physicalHealthReducer,
+  friends: friendReducer
 });
 
 // Step-6: Create our Redux store

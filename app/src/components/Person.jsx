@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import { slipOnBanana, watchNews, winLottery } from '../actions/actions';
+import { slipOnBanana, watchNews, winLottery, addFriend } from '../actions/actions';
 
 class Person extends React.Component {
   // Step-1: Plan your slices of state
@@ -14,6 +14,7 @@ class Person extends React.Component {
 
   onFormSubmit = (event) => {
     event.preventDefault();
+    const input = event.target['friend'];
   }
 
   render() {
@@ -45,7 +46,8 @@ class Person extends React.Component {
 const mapStateToProps = reducers => {
   return {
     mentalHealth: reducers.mentalHealth,
-    physicalHealth: reducers.physicalHealth
+    physicalHealth: reducers.physicalHealth,
+    friends: reducers.friends
   };
 }
 
@@ -53,5 +55,5 @@ const mapStateToProps = reducers => {
 // Step-10: Pass our action creators to `connect` [second argument]
 export default connect(
   mapStateToProps,
-  { slipOnBanana, watchNews, winLottery }
+  { slipOnBanana, watchNews, winLottery, addFriend }
 )(Person);

@@ -2,7 +2,8 @@
 import {
     SLIP_ON_BANANA,
     WATCH_THE_NEWS,
-    WIN_THE_LOTTERY
+    WIN_THE_LOTTERY,
+    ADD_FRIEND
 } from '../actions/actions';
 
 // One reducer per slice of state.
