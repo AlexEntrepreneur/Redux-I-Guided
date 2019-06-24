@@ -25,3 +25,10 @@ export function physicalHealthReducer(sliceOfState = 150, action) {
     }
     return sliceOfState;
 }
+
+export function friendReducer(sliceOfState = [], action) {
+    if (action.type === ADD_FRIEND) {
+        return [...sliceOfState, action.payload];
+    }
+    return sliceOfState;
+}

@@ -9,6 +9,7 @@ class Person extends React.Component {
   // state = {
   //   mentalHealth: 100,
   //   physicalHealth: 150,
+  //   friends: []
   // }
 
   onFormSubmit = (event) => {
