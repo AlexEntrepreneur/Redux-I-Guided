@@ -1,30 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { createStore, combineReducers } from 'redux';
-import { Provider } from 'react-redux';
+// import { createStore, combineReducers } from 'redux';
+// import { Provider } from 'react-redux';
 import App from './App';
 import './index.css';
 
-import { 
-  mentalHealthReducer, 
-  physicalHealthReducer, 
-  friendsReducer 
-} from './reducers/reducers';
-
-const combinedReducer = combineReducers({
-  mentalHealth: mentalHealthReducer,
-  physicalHealth: physicalHealthReducer,
-  friends: friendsReducer,
-});
-
-const store = createStore(
-  combinedReducer,
-  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
-);
+// const store = createStore(
+//   combinedReducer,
+//   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
+// );
 
 ReactDOM.render(
-  <Provider store={store}>
-    <App />
-  </Provider>,
+    <App />,
   document.getElementById('root')
 );
