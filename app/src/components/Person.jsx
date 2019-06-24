@@ -20,6 +20,12 @@ class Person extends React.Component {
       <div>
         <h2>Mental Health: { this.props.mentalHealth }</h2>
         <h2>Physical Health: { this.props.physicalHealth }</h2>
+        <h2>Friends:</h2>
+        {
+          // this.props.friends.map((friend, index) => (
+          //   <h4 key={index}>{friend}</h4>
+          // ))
+        }
         <div>
           <button onClick={this.props.slipOnBanana}>SLIP ON BANANA PEEL</button>
           <button onClick={this.props.watchNews}>WATCH THE NEWS</button>
