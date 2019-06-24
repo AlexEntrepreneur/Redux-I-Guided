@@ -38,6 +38,7 @@ export function exampleReducer1(sliceOfState = 100, action) {
 
 In our `index.js`:
 ```js
+import { combineReducers } from 'redux';
 // Importing our reducers from the file they were exported from
 import { exampleReducer1, exampleReducer2 } from './pathToReducers';
 ```
@@ -51,6 +52,9 @@ const combinedReducer = combineReducers({
 **5. Create Redux Store**
 
 In our `index.js`:
+```js
+import { createStore, combineReducers } from 'redux';
+```
 ```js
 const store = createStore(
   combinedReducer, // IS THE RESULT OF USING combineReducers
@@ -112,12 +116,12 @@ export default connect()(Component);
 
 In our component file:
 ```js
-const mapStateToProps = state => {
+const mapStateToProps = reducers => {
   // Left of the colon = desired name for the prop
   // Right of the colon = the slice of state we are going to map to that prop
   return {
-    exampleProp1: state.sliceName1,
-    exampleProp2: state.sliceName2,
+    exampleProp1: reducers.sliceName1,
+    exampleProp2: reducers.sliceName2,
   }
 }
 ```
