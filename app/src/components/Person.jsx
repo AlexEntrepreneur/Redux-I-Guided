@@ -1,5 +1,5 @@
 import React from 'react';
-// import { connect } from 'react-redux';
+import { connect } from 'react-redux';
 
 class Person extends React.Component {
   // Step-1: Plan your slices of state
@@ -23,5 +23,14 @@ class Person extends React.Component {
     );
   }
 }
+// Step-9: Map state to props
+// Pass `mapStateToProps` function to `connect` [first argument]
+const mapStateToProps = reducers => {
+  return {
+    mentalHealth: reducers.mentalHealth,
+    physicalHealth: reducers.physicalHealth
+  };
+}
 
-export default Person;
+// Step-8: Connect React component
+export default connect(mapStateToProps)(Person);
