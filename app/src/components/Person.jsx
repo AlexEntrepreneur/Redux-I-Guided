@@ -2,6 +2,8 @@ import React from 'react';
 // import { connect } from 'react-redux';
 
 class Person extends React.Component {
+  // Step-1: Plan your slices of state
+  // Write down what slices of state your application will have.
   state = {
     mentalHealth: 100,
     physicalHealth: 150,
