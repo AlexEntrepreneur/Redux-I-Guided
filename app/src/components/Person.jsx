@@ -1,6 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
+import { slipOnBanana, watchNews, winLottery } from '../actions/actions';
+
 class Person extends React.Component {
   // Step-1: Plan your slices of state
   // Write down what slices of state your application will have.
@@ -33,4 +35,8 @@ const mapStateToProps = reducers => {
 }
 
 // Step-8: Connect React component
-export default connect(mapStateToProps)(Person);
+// Step-10: Pass our action creators to `connect` [second argument]
+export default connect(
+  mapStateToProps,
+  { slipOnBanana, watchNews, winLottery }
+)(Person);
